@@ -62,12 +62,34 @@ developing your own process.
 
 - Add a new toy when the toy form is submitted
 
-  - How I debugged:
+  - How I debugged: 
+
+  STEP ONE
+  I used postman to try to create a new toy to see its outcome. 
+  I had an error indicating an uninitialized method with the name "Toys" in my toys_controller.
+
+  STEP TWO
+  I went back to my toys_controller to read my #create Action. 
+  I identified the name error in line 10. The class name Toy is supposed to be singular and not plural
+  as it was initially used. 
+  So I changed it to "Toy" to match the naming convention of instance methods.
 
 - Update the number of likes for a toy
 
   - How I debugged:
 
+  STEPs
+  I used postman to first update a particular toy.
+  I encountered an error that prevented me from updating. 
+  I checked the #update action in my toys_controller to rewrite my #update action properly.
+  I then used postman to update my likes again which was successful. 
+
 - Donate a toy to Goodwill (and delete it from our database)
 
   - How I debugged:
+STEPS
+
+1. I used postman to delete a Toy record from the database.
+2. I received an error pertaining to an unavailable delete route.
+3. I checked my routes.rb from the config tab and realised there was no destroy route.
+4. I updated my route to include a the destroy route to allow my #delete action to work.
